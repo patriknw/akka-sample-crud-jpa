@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'com.typesafe.akka:akka-http_2.12:10.1.0-RC2'
+    compile 'com.typesafe.akka:akka-http-jackson_2.12:10.1.0-RC2'
+    compile 'com.typesafe.akka:akka-stream_2.12:2.5.9'
+    compile 'org.hibernate:hibernate-core:5.2.13.Final'
+    compile 'hsqldb:hsqldb:1.8.0.10'
+    testCompile 'com.typesafe.akka:akka-http-testkit_2.12:10.1.0-RC2'
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = "com.lightbend.akka.jpa.sample.QuickstartServer"
+
+run {
+    standardInput = System.in
+}
